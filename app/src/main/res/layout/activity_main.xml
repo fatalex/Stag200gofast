@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0B1120"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="STAG-200 GoFast"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Статус: Отключено"
+            android:textColor="#94A3B8"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnConnect"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="#38BDF8"
+                android:text="Выбрать Bluetooth"
+                android:textColor="#0F172A" />
+
+            <Button
+                android:id="@+id/btnPoll"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:backgroundTint="#1E293B"
+                android:enabled="false"
+                android:text="Автоопрос"
+                android:textColor="#E2E8F0" />
+        </LinearLayout>
+
+        <!-- Telemetry Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="#1E293B"
+            android:orientation="vertical"
+            android:padding="14dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ПАРАМЕТРЫ ЭБУ"
+                android:textColor="#38BDF8"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvTelemetry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="monospace"
+                android:lineSpacingExtra="4dp"
+                android:text="Обороты:      0 об/мин\nДавление:     0.00 бар  (MAP: 0.00)\nВпрыск Бенз:  0.00 мс\nВпрыск Газ:   0.00 мс\nТемп. ред/газ: 0°C / 0°C\nНапряжение:   0.0 В"
+                android:textColor="#F8FAFC"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- Quick UGIC commands -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="КОМАНДЫ ЧТЕНИЯ (READ-ONLY)"
+            android:textColor="#94A3B8"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnCmd03"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="#1E293B"
+                android:text="0x03 Связь"
+                android:textColor="#E2E8F0"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/btnCmd14"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_weight="1"
+                android:backgroundTint="#1E293B"
+                android:text="0x14 Live"
+                android:textColor="#E2E8F0"
+                android:textSize="12sp" />
+
+            <Button
+                android:id="@+id/btnCmd40"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:layout_weight="1"
+                android:backgroundTint="#1E293B"
+                android:text="0x40 Ошибки"
+                android:textColor="#E2E8F0"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <!-- HEX Log -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="HEX-ЛОГ ОБМЕНА"
+                android:textColor="#94A3B8"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnCopyLog"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:backgroundTint="#334155"
+                android:text="Копировать"
+                android:textColor="#E2E8F0"
+                android:textSize="11sp" />
+
+            <Button
+                android:id="@+id/btnClearLog"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:layout_marginStart="6dp"
+                android:backgroundTint="#334155"
+                android:text="Очистить"
+                android:textColor="#FDA4AF"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvHexLog"
+            android:layout_width="match_parent"
+            android:layout_height="260dp"
+            android:layout_marginTop="8dp"
+            android:background="#020617"
+            android:fontFamily="monospace"
+            android:padding="10dp"
+            android:scrollbars="vertical"
+            android:text="Лог пуст. Нажмите «Выбрать Bluetooth»."
+            android:textColor="#34D399"
+            android:textSize="11sp" />
+    </LinearLayout>
+</ScrollView>
